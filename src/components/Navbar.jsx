@@ -41,7 +41,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="bg-gray-900 shadow-lg relative z-50">
+            <nav className="bg-gray-900 shadow-lg relative z-0">
                 <div className="max-w-6xl mx-auto px-4 sm:px-8 py-4">
                     <div className="flex justify-between items-center">
                         <div className="flex items-center">
@@ -119,7 +119,7 @@ export default function Navbar() {
                     }`}>
                     <div className="flex flex-col h-full">
                         {/* Header */}
-                        <div className="flex items-center justify-between p-6 border-b border-gray-700">
+                        <div className="flex items-center justify-between p-6 border-b border-gray-700 z-10">
                             <h2 className="text-xl font-bold text-green-400">Menu</h2>
                             <button
                                 onClick={closeMenu}
