@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Base } from "./components";
-import { Homepage } from "./pages";
+import { Homepage, About, Contact } from "./pages";
 
 
 export default function App() {
@@ -11,6 +11,8 @@ export default function App() {
                 <Routes>
                     <Route path="" element={<Base />} >
                         <Route index element={<Homepage />} />
+                        <Route path="about" element={<About />} />
+                        <Route path="contact" element={<Contact />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
