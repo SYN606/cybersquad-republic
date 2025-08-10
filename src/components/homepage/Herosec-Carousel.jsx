@@ -4,41 +4,49 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+
 const carouselImages = [
-    { src: '/cyber-illustration.png', alt: 'Cyber Illustration 1' },
-    { src: '/cyber-illustration-2.png', alt: 'Cyber Illustration 2' },
-    { src: '/cyber-illustration-3.png', alt: 'Cyber Illustration 3' }
+    { src: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg', alt: 'Cyber Illustration 1' },
+    { src: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg', alt: 'Cyber Illustration 2' },
+    { src: 'https://images.pexels.com/photos/30265371/pexels-photo-30265371.jpeg', alt: 'Cyber Illustration 3' }
 ];
 
-<motion.div
-    className="flex justify-center w-full"
-    initial={{ opacity: 0, scale: 0.95 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ delay: 0.3, duration: 0.6 }}
->
-    <Swiper
-        spaceBetween={20}
-        centeredSlides={true}
-        autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-        }}
-        pagination={{
-            clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="w-[70%] sm:w-[80%] max-w-xs sm:max-w-sm"
-    >
-        {carouselImages.map((image, index) => (
-            <SwiperSlide key={index}>
-                <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full rounded-lg shadow-lg"
-                    loading="lazy"
-                />
-            </SwiperSlide>
-        ))}
-    </Swiper>
-</motion.div>
+export default function HeroCarousel() {
+    return (
+        <>
+            <div className="flex justify-center w-full py-12">
+                <div className="w-[95%] sm:w-[85%] max-w-5xl">
+                    <div className="blob"></div>
+
+                    <Swiper
+                        spaceBetween={20}
+                        centeredSlides
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation
+                        modules={[Autoplay, Pagination, Navigation]}
+                    >
+                        {carouselImages.map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <div className="aspect-video rounded-xl overflow-hidden hover:scale-105 transition-transform duration-500 border-accent border-2">
+                                    <img
+                                        src={image.src}
+                                        alt={image.alt}
+                                        className="w-full h-full object-cover"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+            </div>
+
+        </>
+    );
+}

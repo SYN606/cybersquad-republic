@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import HeroCarousel from "./Herosec-Carousel";
+import './blob.css'
 
 export default function HeroSection() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center bg-bgcolor text-textcol overflow-hidden px-6">
+        <section className="relative min-h-screen flex items-center justify-center text-textcol overflow-hidden px-6">
             <div className="container mx-auto grid lg:grid-cols-2 gap-10 items-center relative z-10">
 
                 {/* Left Content */}
@@ -66,19 +68,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Right Side Illustration */}
-                <motion.div
-                    className="flex justify-center"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                >
-                    <img
-                        src="/cyber-illustration.png"
-                        alt="Cyber Illustration"
-                        className="w-[70%] sm:w-[80%] max-w-xs sm:max-w-sm"
-                        loading="lazy"
-                    />
-                </motion.div>
+                <HeroCarousel />
             </div>
         </section>
     );
