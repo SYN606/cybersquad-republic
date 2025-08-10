@@ -1,10 +1,9 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { Navbar, Footer } from './'
 
 export default function Base() {
     return (
-        <div className="min-h-screen flex flex-col bg-gray-950">
+        <div className="min-h-screen flex flex-col bg-bgcolor">
             <Navbar />
             <main className="flex-1">
                 <div className="px-4 sm:px-8 py-8 sm:py-16">

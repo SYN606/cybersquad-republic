@@ -1,0 +1,62 @@
+.glitch-text {
+    position: relative;
+}
+
+/* Only enable glitch on devices with hover support */
+@media (hover: hover) {
+
+    .glitch-text::before,
+    .glitch-text::after {
+        content: attr(data-text);
+        /* we'll set data-text in JSX for cleaner content */
+        position: absolute;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .glitch-text:hover::before {
+        animation: glitchTop 0.3s infinite linear alternate-reverse;
+        color: #ff004c;
+    }
+
+    .glitch-text:hover::after {
+        animation: glitchBottom 0.3s infinite linear alternate-reverse;
+        color: #00fff0;
+    }
+
+    @keyframes glitchTop {
+        0% {
+            clip: rect(0, 9999px, 0, 0);
+            transform: translate(-2px, -2px);
+        }
+
+        50% {
+            clip: rect(0, 9999px, 100%, 0);
+            transform: translate(2px, -2px);
+        }
+
+        100% {
+            clip: rect(0, 9999px, 0, 0);
+            transform: translate(-1px, -1px);
+        }
+    }
+
+    @keyframes glitchBottom {
+        0% {
+            clip: rect(0, 9999px, 0, 0);
+            transform: translate(2px, 2px);
+        }
+
+        50% {
+            clip: rect(0, 9999px, 100%, 0);
+            transform: translate(-2px, 2px);
+        }
+
+        100% {
+            clip: rect(0, 9999px, 0, 0);
+            transform: translate(1px, 1px);
+        }
+    }
+}

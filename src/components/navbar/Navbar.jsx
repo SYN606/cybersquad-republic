@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import './navbar.css'
 
 export default function Navbar() {
     const location = useLocation();
@@ -41,12 +42,18 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="bg-gray-900 shadow-lg relative z-0">
+            <nav className="bg-bgcolor shadow-lg relative z-0">
                 <div className="max-w-6xl mx-auto px-4 sm:px-8 py-4">
                     <div className="flex justify-between items-center">
                         <div className="flex items-center">
-                            <Link to="/" className="text-xl sm:text-2xl font-bold text-green-400 hover:text-green-300 transition-colors duration-300">
-                                CyberSquad Republic
+                            <Link
+                                to="/"
+                                data-text="CyberSquad Republic"
+                                className="text-xl sm:text-2xl font-bold text-white hover:text-accent transition-colors duration-300 font-mono tracking-wide relative group glitch-text"
+                            >
+                                <span className="text-accent">C</span>yber
+                                <span className="text-accent">S</span>quad
+                                <span className="text-accent"> R</span>epublic
                             </Link>
                         </div>
 
@@ -56,12 +63,12 @@ export default function Navbar() {
                                 <Link
                                     to="/"
                                     className={`relative font-medium transition-colors duration-300 group ${isActive("/")
-                                            ? "text-green-400"
-                                            : "text-white hover:text-white"
+                                        ? "text-accent"
+                                        : "text-white hover:text-white"
                                         }`}
                                 >
                                     Home
-                                    <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isActive("/") ? "bg-green-400 w-full" : "bg-white"
+                                    <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isActive("/") ? "bg-accent w-full" : "bg-white"
                                         }`}></span>
                                 </Link>
                             </li>
@@ -69,12 +76,12 @@ export default function Navbar() {
                                 <Link
                                     to="/about"
                                     className={`relative font-medium transition-colors duration-300 group ${isActive("/about")
-                                            ? "text-green-400"
-                                            : "text-white hover:text-white"
+                                        ? "text-accent"
+                                        : "text-white hover:text-white"
                                         }`}
                                 >
                                     About
-                                    <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isActive("/about") ? "bg-green-400 w-full" : "bg-white"
+                                    <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isActive("/about") ? "bg-accent w-full" : "bg-white"
                                         }`}></span>
                                 </Link>
                             </li>
@@ -82,12 +89,12 @@ export default function Navbar() {
                                 <Link
                                     to="/contact"
                                     className={`relative font-medium transition-colors duration-300 group ${isActive("/contact")
-                                            ? "text-green-400"
-                                            : "text-white hover:text-white"
+                                        ? "text-accent"
+                                        : "text-white hover:text-white"
                                         }`}
                                 >
                                     Contact
-                                    <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isActive("/contact") ? "bg-green-400 w-full" : "bg-white"
+                                    <span className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isActive("/contact") ? "bg-accent w-full" : "bg-white"
                                         }`}></span>
                                 </Link>
                             </li>
@@ -96,7 +103,7 @@ export default function Navbar() {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={toggleMenu}
-                            className="md:hidden text-white hover:text-green-400 transition-colors duration-300 z-50"
+                            className="md:hidden text-white hover:text-accent transition-colors duration-300 z-50"
                             aria-label="Toggle menu"
                         >
                             {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -120,10 +127,10 @@ export default function Navbar() {
                     <div className="flex flex-col h-full">
                         {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-gray-700 z-10">
-                            <h2 className="text-xl font-bold text-green-400">Menu</h2>
+                            <h2 className="text-xl font-bold text-accent">Menu</h2>
                             <button
                                 onClick={closeMenu}
-                                className="text-white hover:text-green-400 transition-colors duration-300"
+                                className="text-white hover:text-accent transition-colors duration-300"
                                 aria-label="Close menu"
                             >
                                 <FaTimes size={24} />
@@ -138,8 +145,8 @@ export default function Navbar() {
                                         to="/"
                                         onClick={closeMenu}
                                         className={`block text-lg font-medium transition-colors duration-300 ${isActive("/")
-                                                ? "text-green-400"
-                                                : "text-white hover:text-green-400"
+                                            ? "text-accent"
+                                            : "text-white hover:text-white"
                                             }`}
                                     >
                                         Home
@@ -150,8 +157,8 @@ export default function Navbar() {
                                         to="/about"
                                         onClick={closeMenu}
                                         className={`block text-lg font-medium transition-colors duration-300 ${isActive("/about")
-                                                ? "text-green-400"
-                                                : "text-white hover:text-green-400"
+                                            ? "text-accent"
+                                            : "text-white hover:text-accent"
                                             }`}
                                     >
                                         About
@@ -162,8 +169,8 @@ export default function Navbar() {
                                         to="/contact"
                                         onClick={closeMenu}
                                         className={`block text-lg font-medium transition-colors duration-300 ${isActive("/contact")
-                                                ? "text-green-400"
-                                                : "text-white hover:text-green-400"
+                                            ? "text-accent"
+                                            : "text-white hover:text-accent"
                                             }`}
                                     >
                                         Contact
