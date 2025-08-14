@@ -18,8 +18,8 @@ export default function WhoWeAre() {
     };
 
     return (
-        <section className="py-16">
-            <div className="max-w-6xl mx-auto px-4 sm:px-8 grid md:grid-cols-2 gap-10 items-center">
+        <section className="py-12 sm:py-16">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
                 {/* Text Content */}
                 <motion.div
@@ -27,9 +27,10 @@ export default function WhoWeAre() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="text-left"
                 >
                     <motion.h2
-                        className="text-textcol text-3xl sm:text-4xl font-bold mb-4"
+                        className="text-textcol text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
                         whileHover={{
                             color: "var(--color-accent)",
                             transition: { duration: 0.3 }
@@ -38,13 +39,13 @@ export default function WhoWeAre() {
                         Who We Are
                     </motion.h2>
 
-                    <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6 max-w-xl">
                         We are a passionate team of innovators, technologists, and creators
                         dedicated to building secure, cutting-edge digital solutions.
                         Our mission is to combine creativity with technology to shape the
                         future of the cyber world.
                     </p>
-                    <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8 max-w-xl">
                         With years of experience in cybersecurity, development, and
                         design, we focus on delivering meaningful solutions that
                         empower businesses and individuals alike.
@@ -58,14 +59,14 @@ export default function WhoWeAre() {
                             boxShadow: "0 0 15px var(--color-primary)"
                         }}
                         transition={{ duration: 0.3 }}
-                        className="px-6 py-3 rounded-lg font-semibold bg-accent text-white shadow-md transition duration-300"
+                        className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold bg-accent text-white shadow-md transition duration-300 text-sm sm:text-base"
                     >
                         Read More
                     </motion.button>
                 </motion.div>
 
                 {/* Icon Features */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 md:grid-cols-1 gap-5 sm:gap-6">
                     {[
                         { icon: <FaLock />, title: "Security" },
                         { icon: <FaCode />, title: "Innovation" },
@@ -73,7 +74,7 @@ export default function WhoWeAre() {
                     ].map((item, idx) => (
                         <motion.div
                             key={idx}
-                            className="flex flex-col items-center text-center p-6 rounded-xl border border-accent/40 bg-bgcolor/50 shadow-lg transition duration-300"
+                            className="flex flex-col items-center text-center p-5 sm:p-6 rounded-xl border border-accent/40 bg-bgcolor/50 shadow-lg transition duration-300"
                             variants={cardVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -81,13 +82,13 @@ export default function WhoWeAre() {
                             viewport={{ once: true }}
                             custom={idx}
                         >
-                            <div className="text-accent text-4xl mb-3">{item.icon}</div>
-                            <h3 className="text-textcol font-semibold">{item.title}</h3>
+                            <div className="text-accent text-4xl sm:text-5xl mb-3">{item.icon}</div>
+                            <h3 className="text-textcol font-semibold text-base sm:text-lg">{item.title}</h3>
                         </motion.div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
 }
- 
