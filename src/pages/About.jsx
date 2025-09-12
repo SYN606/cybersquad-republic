@@ -1,7 +1,14 @@
+import { Hero, Mission, Philosophy, Resources, Subscription } from "../components/about";
+
+
 export default function About() {
     return (
         <>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">About Us</h2>
+            <Hero />
+            <Philosophy />
+            <Mission />
+            <Resources />
+            <Subscription />
         </>
     );
 } 
