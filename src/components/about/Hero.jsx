@@ -4,7 +4,6 @@ import { FaUsers } from "react-icons/fa";
 export default function Hero() {
     return (
         <section className="relative bg-bgcolor text-textcol py-32 overflow-hidden rounded-2xl">
-            {/* Background image with parallax + blur */}
             <div
                 className="absolute inset-0 bg-fixed bg-center bg-cover filter blur-sm scale-105"
                 style={{
@@ -12,20 +11,15 @@ export default function Hero() {
                 }}
             ></div>
 
-
-            {/* Dark overlay for readability */}
             <div className="absolute inset-0 bg-black/30"></div>
 
-            {/* Content wrapper */}
             <motion.div
                 className="relative z-10 max-w-4xl mx-auto px-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: "easeOut" }}
             >
-                {/* Glassmorphism card */}
                 <div className="rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl p-10 text-center">
-                    {/* Title */}
                     <motion.h1
                         className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight"
                         initial={{ opacity: 0 }}
@@ -38,7 +32,6 @@ export default function Hero() {
                         </span>
                     </motion.h1>
 
-                    {/* Subtitle */}
                     <motion.p
                         className="text-lg text-gray-300 mb-10 leading-relaxed"
                         initial={{ opacity: 0 }}
@@ -50,7 +43,6 @@ export default function Hero() {
                         Training hackers of the future, one root shell at a time.
                     </motion.p>
 
-                    {/* CTA Button */}
                     <motion.a
                         href="https://chat.whatsapp.com/YOUR_INVITE_LINK"
                         target="_blank"

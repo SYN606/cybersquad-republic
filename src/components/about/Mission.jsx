@@ -22,7 +22,6 @@ export default function Mission() {
             id="mission"
             className="relative bg-bgcolor text-textcol py-20 px-6 overflow-hidden"
         >
-            {/* background accent */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-secondry/10 pointer-events-none"></div>
 
             <motion.div
@@ -32,7 +31,6 @@ export default function Mission() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true }}
             >
-                {/* Heading */}
                 <h3 className="text-3xl md:text-4xl font-bold mb-8">
                     Our{" "}
                     <span className="bg-gradient-to-r from-accent via-highlight-text to-secondry bg-clip-text text-transparent">
@@ -40,14 +38,12 @@ export default function Mission() {
                     </span>
                 </h3>
 
-                {/* Description */}
-                <p className="mb-10 text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                <p className="mb-10 text-textcol leading-relaxed max-w-2xl mx-auto">
                     To build a high-quality community that benefits hackers and nerds
                     alike — a place where members get real, deep information and practical
                     experience without the smoke and mirrors.
                 </p>
 
-                {/* Mission points */}
                 <div className="space-y-6 text-left max-w-2xl mx-auto">
                     {listItems.map((item, i) => (
                         <motion.div

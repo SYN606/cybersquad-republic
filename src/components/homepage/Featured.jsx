@@ -20,7 +20,7 @@ export default function FeaturedArticles() {
     ];
 
     return (
-        <section className="py-16 bg-bgcolor">
+        <section className="py-16">
             <div className="max-w-6xl mx-auto px-4 sm:px-8">
                 {/* Section Heading */}
                 <motion.h2
